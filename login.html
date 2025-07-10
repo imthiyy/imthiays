@@ -19,16 +19,69 @@
   </header>
 
   <div class="container">
-    <h1>Login</h1>
-    <form>
-      <label for="email-login">Email:</label><br/>
-      <input type="email" id="email-login" name="email-login" required /><br/><br/>
+    <h2>Login</h2>
+<input type="email" id="email" placeholder="Email"><br>
+<input type="password" id="password" placeholder="Password"><br>
+<button onclick="login()">Login</button>
+<p id="login-status"></p>
 
-      <label for="password-login">Password:</label><br/>
-      <input type="password" id="password-login" name="password-login" required /><br/><br/>
+<h3>New user?</h3>
+<input type="email" id="reg-email" placeholder="New Email"><br>
+<input type="password" id="reg-pass" placeholder="New Password"><br>
+<button onclick="register()">Register</button>
+<p id="register-status"></p>
 
-      <button type="submit">Login</button>
-    </form>
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw3McM6MFjYPLCmecwBfiCvNxQUdmLHP_Xa5QI-Akmko0lh1VOof8qScA_BUUZIHtZKSw/exec"; // Replace with your Web App URL
+
+  function login() {
+    fetch(scriptURL, {
+      method: 'POST',
+      body: JSON.stringify({
+        action: 'login',
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 'success') {
+        window.location.href = "anime.html"; // Redirect on success
+      } else {
+        document.getElementById('login-status').innerText = "❌ Invalid credentials";
+      }
+    });
+  }
+
+  function register() {
+  const email = document.getElementById('reg-email').value;
+  const password = document.getElementById('reg-pass').value;
+
+  fetch(scriptURL, {
+    method: 'POST',
+    body: JSON.stringify({
+      action: 'register',
+      email: email,
+      password: password
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    const statusEl = document.getElementById('register-status');
+    if (data.status === 'registered') {
+      statusEl.innerText = "✅ You are registered successfully!";
+      statusEl.style.color = "green";
+    } else if (data.status === 'exists') {
+      statusEl.innerText = "❌ This email is already registered.";
+      statusEl.style.color = "red";
+    } else {
+      statusEl.innerText = "⚠️ Something went wrong.";
+      statusEl.style.color = "orange";
+    }
+  });
+}
+</script>
+
   </div>
 
   <footer>
