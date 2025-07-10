@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>imthiyas website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1 class="im">🌟</h1>
+    <h1 class="imt">Welcome to my Website</h1>
+  </header>
+
+  <nav>
+    <a href="index.html" onclick="showPage('home')">Home</a>
+    <a href="about.html" onclick="showPage('about')">About Us</a>
+    <a href="contact.html" onclick="showPage('contact')">Contact</a>
+    <a href="blog.html" onclick="showPage('blog')">Blog</a>
+    <a href="login.html" onclick="showPage('login')">Login</a>
+    <a href="signin.html" onclick="showPage('signup')">Sign Up</a>
+  </nav>
+
+  <main>
+    <!-- Home -->
+    <section id="home">
+      <h2>Home Page</h2>
+      <p>Welcome to our awesome website! Enjoy browsing. 🎉</p>
+      <P>here you can learn about old OG anime</P>
+      <img src="AdobeStock_523040057_Preview.png" alt="Welcome">
+      <button class="btn-action" onclick="window.location.href='product/my.html'">Click Me!</button>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="hidden">
+      <h2>About Us</h2>
+      <p>We are a creative team passionate about design, technology, and user experience.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="hidden">
+      <h2>Contact Us</h2>
+      <p>Email: contact@example.com</p>
+      <p>Phone: +123 456 7890</p>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="hidden">
+      <h2>Blog</h2>
+      <p>Latest updates and news will appear here. Stay tuned!</p>
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="hidden">
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Username" required><br><br>
+        <input type="password" placeholder="Password" required><br><br>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Sign Up -->
+    <section id="signup" class="hidden">
+      <h2>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Username" required><br><br>
+        <input type="email" placeholder="Email" required><br><br>
+        <input type="password" placeholder="Password" required><br><br>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="one">
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+  </footer>
+
+  <script src="scripit.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+  animation: fadeIn 1s ease-in-out;
+  background-size:;
+  background-position: 30px;
+  color: white;
+
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(85, 76, 76, 0.5); /* 50% black overlay */
+  z-index: -1;
+  background-color: rgb(159, 65, 65);
+}
+main{
+  text-align: center;
+}
+
+
+header, nav, footer {
+  background-color: rgb(75, 28, 28);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #00ffff;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+  transform-origin: right;
+}
+.imt {
+  background: linear-gradient(to right, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+.im{
+  display: inline;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  display: none;
+  animation: fadeIn 0.8s ease-in;
+}
+
+section#home {
+  display: block; /* Default visible section */
+}
+
+.hidden {
+  display: none;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.btn-action {
+  background-color: #00796b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.container{
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  animation: slideFade 1s ease-out forwards;
+}
+footer{
+  padding:50px;
+}
+
+.one{
+  color: white;
+  background-color: rgb(75, 28, 28);
+  margin-top: 100px;
+   
+}
+
+#home{
+  font-style:italic;
+  font-size: large;
+}
