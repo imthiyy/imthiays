@@ -52,34 +52,6 @@
       }
     });
   }
-
-  function register() {
-  const email = document.getElementById('reg-email').value;
-  const password = document.getElementById('reg-pass').value;
-
-  fetch(scriptURL, {
-    method: 'POST',
-    body: JSON.stringify({
-      action: 'register',
-      email: email,
-      password: password
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    const statusEl = document.getElementById('register-status');
-    if (data.status === 'registered') {
-      statusEl.innerText = "✅ You are registered successfully!";
-      statusEl.style.color = "green";
-    } else if (data.status === 'exists') {
-      statusEl.innerText = "❌ This email is already registered.";
-      statusEl.style.color = "red";
-    } else {
-      statusEl.innerText = "⚠️ Something went wrong.";
-      statusEl.style.color = "orange";
-    }
-  });
-}
 </script>
 
   </div>

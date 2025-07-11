@@ -3,7 +3,7 @@ body {
   margin: 0;
   background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
   animation: fadeIn 1s ease-in-out;
-  background-size:;
+  background-size:auto;
   background-position: 30px;
   color: white;
 
